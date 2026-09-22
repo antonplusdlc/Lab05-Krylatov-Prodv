@@ -49,3 +49,32 @@ while (!isValid)
     }
 }
 Console.WriteLine($"vozrast: {enteredAge}");
+
+Console.WriteLine();
+Console.WriteLine("menu (bez vizoda odin prohod)");
+
+string menuChoice;
+do
+{
+    Console.WriteLine("1 - date");
+    Console.WriteLine("2 - hello");
+    Console.WriteLine("0 - exit");
+    Console.Write("enter punkt: ");
+    menuChoice = Console.ReadLine();
+
+    switch (menuChoice)
+    {
+        case "1":
+            Console.WriteLine($"today: {DateTime.Now:dd.MM.yyyy}");
+            break;
+        case "2":
+            Console.WriteLine($"hello!");
+            break;
+        case "0":
+            Console.WriteLine("exit.");
+            break;
+        default:
+            Console.WriteLine("no no no mr.fish");
+            break;
+    }
+} while (menuChoice != "0");
