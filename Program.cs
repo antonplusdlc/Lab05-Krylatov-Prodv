@@ -100,3 +100,70 @@ for (int k = 0; k <= 20; k += 2)
     Console.WriteLine(k);
 }
 
+Console.WriteLine();
+Console.WriteLine("foreach str");
+
+string word = "programming";
+
+foreach (char letter in word)
+{
+    Console.Write($"{letter}");
+}
+Console.WriteLine();
+
+Console.WriteLine();
+Console.WriteLine("glastnie");
+
+string sentence = "Курс алгоритмизации и программирования";
+string vowels = "аеёиоуыэюяАЕЁИОУЫЭЮЯ";
+int vowelCnt = 0;
+
+foreach (char letter in sentence)
+{
+    if (vowels.Contains(letter))
+    {
+        vowelCnt++;
+    }
+}
+
+Console.WriteLine($"glastnix bukv: {vowelCnt}");
+
+Console.WriteLine();
+Console.WriteLine("таблица * от 1-9");
+
+for (int row = 1; row <= 9; row++)
+{
+    for (int col = 1; col <= 9; col++)
+    {
+        Console.Write($"{row * col,4}");
+    }
+    Console.WriteLine();
+}
+
+Console.WriteLine();
+Console.WriteLine("треугольник");
+
+for (int row = 1; row <= 5; row++)
+{
+    for (int col = 1; col <= row; col++)
+    {
+        Console.Write("*");
+    }
+    Console.WriteLine();
+}
+
+Console.WriteLine();
+Console.WriteLine("break прерывает только внутренний цикл");
+
+for (int row = 1; row <= 3; row++)
+{
+    Console.WriteLine($"внешняя интерация: {row}");
+    for (int col = 1; col <= 5; col++)
+    {
+        if (col == 3)
+        {
+            break;
+        }
+        Console.WriteLine($"    внутренняя итерация: {col}");
+    }
+}
