@@ -78,3 +78,25 @@ do
             break;
     }
 } while (menuChoice != "0");
+
+Console.WriteLine();
+Console.WriteLine("pramoi schet");
+for (int k = 1; k <= 5; k++)
+{
+    Console.WriteLine(k);
+}
+
+Console.WriteLine();
+Console.WriteLine("obratno");
+for (int k = 5; k >= 1; k--)
+{
+    Console.WriteLine(k);
+}
+
+Console.WriteLine();
+Console.WriteLine("chetnie chisla ot 0 do 20");
+for (int k = 0; k <= 20; k += 2)
+{
+    Console.WriteLine(k);
+}
+
