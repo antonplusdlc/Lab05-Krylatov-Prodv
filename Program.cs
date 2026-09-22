@@ -1,4 +1,4 @@
-﻿Console.WriteLine("obratniy otscet");
+﻿/*Console.WriteLine("obratniy otscet");
 
 int countdown = 5;
 while (countdown >= 1)
@@ -166,4 +166,65 @@ for (int row = 1; row <= 3; row++)
         }
         Console.WriteLine($"    внутренняя итерация: {col}");
     }
-}
+}*/
+
+// TextAnalyzer
+
+string glastnie = "аеёиоуыэюяАЕЁИОУЫЭЮЯ";
+string soglastnie = "бвгджзйклмнпрстфхцчшщБВГДЖЗЙКЛМНПРСТФХЦЧШЩ";
+string probel = " ";
+int glastnieCnt = 0;
+int soglastnieCnt = 0;
+int probelCnt = 0;
+bool zaglavBukza = false;
+
+string menu;
+do
+{
+    Console.WriteLine("1 - Проанализировать предложение");
+    Console.WriteLine("2 - Найти позицию первой заглавной буквы");
+    Console.WriteLine("0 - Выход");
+    Console.Write("enter punkt: ");
+    menu = Console.ReadLine();
+
+    switch (menu)
+    {
+        case "1":
+            Console.Write("Enter предложение: ");
+            string predl = Console.ReadLine();
+
+            foreach (char da in predl)
+            {
+                if (glastnie.Contains(da)) glastnieCnt++;
+                if (soglastnie.Contains(da)) soglastnieCnt++;
+                if (probel.Contains(da)) probelCnt++;
+            }
+
+            Console.WriteLine($"Predl: {predl}\nglastnie: {glastnieCnt}\nsoglastnie: {soglastnieCnt}\nprobel: {probelCnt}\nvsego: {predl.Length}");
+            glastnieCnt = 0;
+            soglastnieCnt = 0;
+            probelCnt = 0;
+            break;
+        case "2":
+            Console.Write("Enter предложение: ");
+            string predll = Console.ReadLine();
+
+            for (int i = 0; i < predll.Length; i++)
+            {
+                if (char.IsUpper(predll[i]))
+                {
+                    Console.WriteLine($"FOUND! Position is: {i}\nchar: {predll[i]}");
+                    zaglavBukza = true;
+                    break;
+                }
+            }
+            if (!zaglavBukza) Console.WriteLine("Заглавных букв нет");
+            break;
+        case "0":
+            Console.WriteLine("exit.");
+            break;
+        default:
+            Console.WriteLine("no no no mr.fish");
+            break;
+    }
+} while (menu != "0");
